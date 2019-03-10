@@ -1,4 +1,9 @@
-### 命令
+# docker基础文档
+- 作者：codehackfox@gmail.com
+- 时间：2019-03-10 18:06:12
+
+
+>## 0x00、命令
 
 - Management Commands:
   * config      Manage Docker configs
@@ -68,55 +73,51 @@
 - docker build    // 用docker file来创建镜像
 - docker tag      // 设置镜像标签
 
-> 容器生命周期管理·
+- 容器生命周期管理
+  * run
+  * start/stop/restart
+  * kill
+  * rm
+  * pause/unpause·
+  * create
+  * exec
 
-- run
-- start/stop/restart
-- kill
-- rm
-- pause/unpause·
-- create
-- exec
+- 容器操作
+  * ps
+  * inspect
+  * top
+  * attach
+  * events
+  * logs
+  * wait
+  * export
+  * port
 
-> 容器操作
+- 容器rootfs命令
+  * commit
+  * cp
+  * diff
 
-- ps
-- inspect
-- top
-- attach
-- events
-- logs
-- wait
-- export
-- port
+- 镜像仓库
+  * login
+  * pull
+  * push
+  * search
 
-> 容器rootfs命令
+- 本地镜像管理
+  * images
+  * rmi
+  * tag
+  * build
+  * history
+  * save
+  * import
 
-- commit
-- cp
-- diff
+- info|version
+  * info
+  * version
 
-> 镜像仓库
-
-- login
-- pull
-- push
-- search
-
-> 本地镜像管理
-
-- images
-- rmi
-- tag
-- build
-- history
-- save
-- import
-
-> info|version
-
-- info
-- version
+>## 0x01、简介
 
 ### 链接映射
 - docker有一个连接系统允许将多个容器连接在一起，共享连接信息。docker连接会创建一个父子关系，其中父容器可以看到子容器的信息。·
@@ -135,7 +136,7 @@
   - 容器引擎：生命周期控制。
 - 目前市场上所有Linux容器项目都包含以上组件。
 
-### Cgroups
+>## 0x02、Cgroups
 - Cgroup是control group的简写，属于Linux内核提供的一个特性，用于限制和隔离一组进程对系统资源的使用，也就是做资源QoS，这些资源主要包括CPU、内存、block I/O和网络带宽。
 - 从实现的角度来看，Cgroup实现了一个通用的进程分组的框架，而不同资源的具体管理则是由各个Cgroup子系统实现的。
 - Cgroup中实现的子系统及其作用如下：
@@ -180,7 +181,7 @@
 - devices子系统用来控制Cgroup的进程对哪些设备有访问权限
 
 
-### Namespace
+>## 0x03、Namespace
 - Namespace是将内核的全局资源做封装，使得每个Namespace都有一份独立的资源，因此不同的进程在各自的Namespace内对同一种资源的使用不会互相干扰
 - 目前Linux内核总共实现了6种Namespace：
   - IPC：隔离System V IPC和POSIX消息队列。
@@ -209,7 +210,7 @@
 - Namespace和Cgroup的使用是很灵活的，同时这里面又有不少需要注意的地方，因此直接操作Namespace和Cgroup并不是很容易。正是因为这些原因，Docker通过Libcontainer来处理这些底层的事情。这样一来，Docker只需要简单地调用Libcontainer的API，就能将完整的容器搭建起来
 
 
-## Images
+>## 0x04、Images
 - 是启动融资的rootfs,只读模版
 
 #### 一、基本概念
@@ -269,7 +270,7 @@ docker inspect dockerID
   * 把多个目录挂载到同一个目录，对外呈现这些目录的联合。·
 - 2.写时复制
 
-## 仓库进阶
+>## 0x05、仓库进阶
 
 #### 什么是仓库
 > 仓库的组成
@@ -313,18 +314,18 @@ docker search ubuntu
 > 私有仓库搭建
 
 
-## docker网络
+>## 0x06、docker网络
 
 
-## 容器卷管理
+>## 0x07、容器卷管理
 - 可以把本地文件目录挂载到容器内
 
-## DockerAPI
+>## 0x08、DockerAPI
 - Docker Remote API
 - Docker Registry API
 - Docker Hub API
 
-## Docker安全
+>## 0x09、Docker安全
 
 > 包含内容
 
@@ -369,16 +370,16 @@ docker search ubuntu
 > 安全遗留问题
 
 
-## Libcontainer
+>## 0x10、Libcontainer
 
 - 容器引擎：一种驱动和管理容器生命周期的runtime工具
 
-## Docker实战
+>## 0x11、Docker实战
 - 部署web服务
 
-## Docker集群
+>## 0x12、Docker集群
 - Compose
 - Machine
 - Swarm
 
-## Docker生态圈
+>## 0x13、Docker生态圈

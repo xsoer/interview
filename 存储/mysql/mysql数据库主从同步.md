@@ -1,3 +1,10 @@
+# mysql数据库主从同步
+
+- 作者：codehackfox@gmail.com
+- 时间：2019-03-10 18:25:53
+
+>## 0x00、同步步骤
+
 - 1.主库和从库创建同步账户
     mysql> grant replication slave, replication client on *.* to repl@'192.168.1.%' identified by 		   '123456';
 - 2.主库配置/etc/my.cnf
@@ -38,7 +45,8 @@
     mysql>show slave status;
 - 10.双向主从的话，把主库按照从库在配置一遍即可
 
-##### 注：
+>## 0x01、备注：
+
 - 1.两个数据库版本尽量一致，如果不一致，高版本做从库，此时不可双向主从
 - 2.主库和从库的数据库名必须相同；
 - 3.主库和从库的复制可以精确到表，但是在需要更改主库或从库的数据结构时需要立刻重启slave；

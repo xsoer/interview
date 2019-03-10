@@ -1,16 +1,9 @@
----
-author: "hackfox"
-date: 2015-12-28 12:23:00
-title: "mysql性能优化建议"
-categories:
-  - mysql
-tags:
-  - mysql
-  - 性能优化
-comments: false
-toc: true
-draft: false
----
+# mysql性能优化建议
+
+- 作者：codehackfox@gmail.com
+- 时间：2015-12-28 12:23:00
+
+>## 0x00、优化建议
 
 - 1.为查询缓存优化你的查询(curdata(),rand(),no()无法进行优化)；
 - 2.explain你的查询；
