@@ -1,4 +1,5 @@
 # python资源汇总
+
 - 作者：codehackfox@gmail.com
 - 时间：2019-03-10 13:33:30
 
@@ -6,11 +7,12 @@
 
 - [各种图书资源](https://github.com/xsoer/learn-files/tree/master/%E8%AF%AD%E8%A8%80%E7%9B%B8%E5%85%B3/python)
 
-
 >## 0x01、常用库
 
 ### 01、通用库
 - urllib
+    * allows you access websites via your program
+    * [文档](https://docs.python.org/3/library/urllib.html)
 - requests -网络库
 - grab – 网络库（基于pycurl）。
 - pycurl – 网络库（绑定libcurl）。
