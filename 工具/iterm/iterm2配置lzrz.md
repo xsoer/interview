@@ -35,7 +35,6 @@ sudo chmod 777 /usr/local/bin/iterm2-*
 Regular Expression: \*\*B0100
 Action: Run Silent Coprocess
 Parameters: /usr/local/bin/iterm2-send-zmodem.sh
-
 ```
 - 3.sz配置
 ```
