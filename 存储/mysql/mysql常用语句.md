@@ -7,7 +7,7 @@
 
 - 1.授权用户
 ```
-mysql>GRANT ALL PRIVILEGES ON *.* TO 'zxc'@'%' IDENTIFIED BY 'ydp#2015$Z!!!' WITH 			GRANT OPTION;
+mysql>GRANT ALL PRIVILEGES ON *.* TO 'zxc'@'%' IDENTIFIED BY 'ydp#2015$Z!!!' WITH GRANT OPTION;
 mysql>FLUSH PRIVILEGES;
 ```
 - 2.远程连接

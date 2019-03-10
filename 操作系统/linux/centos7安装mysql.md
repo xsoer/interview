@@ -1,3 +1,9 @@
+# centos7安装mysql
+
+- 作者：
+- 时间：
+
+
 1.安裝 MySQL Repository:
     # rpm -Uvh  http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
                 https://repo.mysql.com//mysql57-community-release-el6-7.noarch.rpm

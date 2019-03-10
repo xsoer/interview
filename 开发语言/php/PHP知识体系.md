@@ -1,17 +1,10 @@
----
-author: "hackfox"
-date: 2018-03-02 11:53:29
-title: "PHP知识体系"
-categories:
-  - Development
-tags:
-  - 计算机
-comments: false
-toc: true
-draft: true
----
+# PHP知识体系
 
-# 关键字
+- 作者：codehackfox@gmail.com
+- 时间：2018-03-02 11:53:29
+
+>## 0x00、关键字
+
 - $ 、echo、 print、null、global、GLOBALS['y']、static、function、public、private、protected
 - 对象(class)：String、Integer、Float、Boolean、Object、NULL、Resource、Closure()
 - 函数(function)：
@@ -38,7 +31,7 @@ draft: true
 - 魔术方法：
   * __contract()、__decontract、__get()、__set()、 _invoke()
 
-# 字符串
+>## 0x01、字符串
 
 ```php
 //字符串定义方式
@@ -171,15 +164,16 @@ echo strrev($str3);
 echo number_format('123456789');
 ```
 
-# 数组
+>## 0x02、数组
 
-# 类
+>## 0x03、类
 
-# 函数
+>## 0x04、函数
 
-# 文件操作
+>## 0x05、文件操作
 
-# 应用
+>## 0x06、应用
+
 - 1.交换两个数
 ```php
 $a = 123.456;
@@ -223,7 +217,7 @@ change($test);
 print_r($test);
 ```
 
-# 日期
+>## 0x07、日期
 
 - 函数:
 ```php
@@ -275,7 +269,7 @@ echo "当月的第一天: ".$day[0]." 当月的最后一天: ".$day[1];
 echo "<br/>";
 ```
 
-# 正则
+>## 0x08、正则
 
 ```php
 $str=preg_replace("/<\\s*img\\s+[^>]*?src\\s*=\\s*(\\\'|\\")(.*?)\\\\1[^>]*?\\/?\\s*>/i", " ", $str); //过滤img标签
@@ -310,7 +304,7 @@ $str=preg_replace("/on([a-z]+)\\s*=/si","On\\\\1=",$str); //过滤script标签
 $str=preg_replace("/&#/si","&＃",$str); //过滤script标签
 ```
 
-# socket
+>## 0x09、socket
 
 ```php
 socket_accept() 接受一个Socket连接
@@ -350,17 +344,17 @@ socket_write() 写数据到socket缓存
 socket_writev() 写数据到分散/聚合数组
 ```
 
-# php-fpm与nginx
+>## 0x10、php-fpm与nginx
 
-# 资源
+>## 0x11、资源
 - PhpDocmentor
 
-### 依赖管理——用于依赖管理的包和框架
+>## 0x12、依赖管理——用于依赖管理的包和框架
 - Composer/Packagist : 一个包和依赖管理器
 - Composer Installers: 一个多框架Composer库安装器
 - Pickle: 可以在任意平台上安装PHP扩展包
 
-### 依赖管理的附加部分——其它依赖管理的相关工具
+>## 0x13、依赖管理的附加部分——其它依赖管理的相关工具
 - Satis : 静态的Composer库生成器
 - Composition: 一个运行时检查Composer环境的库
 - Version : 一个在语义上分析和比较的库
@@ -368,7 +362,7 @@ socket_writev() 写数据到分散/聚合数组
 - Patch Installer: 使用Composer安装补丁的库
 - Composer Checker: 一个验证Composer配置的工具
 
-### 框架——Web开发框架
+>## 0x14、框架——Web开发框架
 - Symfony2 : 由独立组件构成的框架
 - Zend Framework 2: 同样是由独立组件构成的框架
 - Laravel 5: 简洁优雅的PHP Web开发框架
@@ -378,24 +372,24 @@ socket_writev() 写数据到分散/聚合数组
 - PPI Framework 2: 一个交互性的框架
 - Phalcon: 一个作为C扩展的框架
 
-###  框架的附加部分——其它关于Web开发框架的相关工具
+>## 0x15、框架的附加部分——其它关于Web开发框架的相关工具
 - Symfony CMF: 一个创建自定义CMS的内容管理框架
 - Knp RAD Bundle: Symfony2的快速应用程序包（RAD）
 
-### 框架组件——来自Web开发框架的组件
+>## 0x16、框架组件——来自Web开发框架的组件
 - Symfony2 Components: 关于Symphony2的组件
 - Zend Framework 2 Components: 关于ZF2的组件
 - Aura Components: 一个PHP5.4的组件包
 - Hoa Project: 另一个PHP组件包
 
-### 微型框架——微型框架和路由
+>## 0x17、微型框架——微型框架和路由
 - Silex: 基于Symphony2组件的微型框架
 - Slim: 另一个简单的微型框架
 - Bullet PHP: 用于构建REST APIs的微型框架
 - Fast Route: 快速路由选择库
 - Pux: 另一个快速路由选择库
 
-### 微型框架的附加部分——其它相关的微型框架和路由
+>## 0x18、微型框架的附加部分——其它相关的微型框架和路由
 - Silex Skeleton: 用于Silex的项目框架
 - Silex Web Profiler: 用于Silex的Web调试工具条
 - Stack: 用于Silex/Symphony的可堆叠中间件库
@@ -403,7 +397,7 @@ socket_writev() 写数据到分散/聚合数组
 - Slim View: Slim的自定义视图集
 - Slim Middleware: Slim的自定义中间件集合
 
-### 模板——模板和词法分析的库与工具
+>## 0x19、模板——模板和词法分析的库与工具
 - Twig: 一种综合的模板语言
 - Twig Cache Extension: 用于Twig的模板片段缓存库
 - Mustache: PHP实现的Mustache模板语言
@@ -413,7 +407,7 @@ socket_writev() 写数据到分散/聚合数组
 - Plates: 一个原始的PHP模板库
 - Lex: 一个轻量级模板解析器
 
-### 静态站点生成器——生成Web页面内容的预处理工具
+>## 0x20、静态站点生成器——生成Web页面内容的预处理工具
 - Sculpin: 将Markdown和Twig转换为静态HTML的工具
 - Phrozn: 另一款将Textile、Markdown和Twig转为HTML的工具
 - HTTP——用于HTTP和抓取网站的库
@@ -434,7 +428,7 @@ socket_writev() 写数据到分散/聚合数组
 - Stampie: 关于邮件服务的库，比如SendGrid、PostMark、MailGun和Mandrill
 - CssToInlineStyles: 邮件模板中一个内联的CSS库
 
-###文件——关于文件处理和MIME类型检查
+>## 0x21、文件——关于文件处理和MIME类型检查
 - Gaufrette: 一个文件流的抽象层
 - Flysystem: 另一个文件流的抽象层
 - Canal: 一个检查互联网媒体类型的库
@@ -446,7 +440,7 @@ socket_writev() 写数据到分散/聚合数组
 - PHP FFmpeg: 一个用于FFmpeg视频包装的库
 - CSV: 一个CSV数据操作库
 
-### 流——处理流的库
+>## 0x22、流——处理流的库
 - Streamer: 一个简单的面向对象流包装库
 - 依赖注入——实现依赖注入设计模式的库
 - Pimple: 一个小的依赖注入容器
@@ -455,7 +449,7 @@ socket_writev() 写数据到分散/聚合数组
 - PHP DI: 一个使用标注实现的依赖注入
 - Acclimate: 依赖注入容器和服务定位器的通用接口
 
-### 图像——处理图像的库
+>## 0x23、图像——处理图像的库
 - Imagine: 一个图像处理库
 - PHP Image Workshop: 另一个图像处理库
 - Intervention Image: 同样还是一个图像处理库
@@ -464,7 +458,7 @@ socket_writev() 写数据到分散/聚合数组
 - Image With Text: 在图像中嵌入文本的库
 - Color Extractor: 从图像中提取颜色的库
 
-### 测试——测试代码库和生成测试数据的库
+>## 0x24、测试——测试代码库和生成测试数据的库
 - PHPUnit: 一个单元测试框架
 - DBUnit: PHPUnit的代码测试库
 - ParaTest: PHPUnit的并行测试库
@@ -486,22 +480,20 @@ socket_writev() 写数据到分散/聚合数组
 - VFS: 另一个用于测试的虚拟文件系统
 - Locust: 一个Python开发的现代负载测试库
 
-### 持续集成——持续集成的库和应用
+>## 0x25、持续集成——持续集成的库和应用
 - Travis CI: 一个持续集成的平台
 - PHPCI: 一个PHP的开源持续集成平台
 - Sismo: 一个持续的测试服务器库
 - Jenkins: PHP支持的持续集成平台
 - JoliCi: PHP开发的由Docker支持的持续集成客户端
 
-### 文档——生成项目文档的库
+>## 0x26、文档——生成项目文档的库
 - Sami: 一个API文档生成器
 - APIGen: 另一个API文档生成器
 - PHP Documentor 2: 文档生成器
 - phpDox: 一个PHP项目的文档生成器（不仅仅是API文档）
 
-### 安全性
-> 用于生成安全的随机数、加密数据、扫描漏洞的库
-
+>## 0x27、安全性
 - HTML Purifier: 一个标准的HTML过滤器
 - RandomLib: 生成随机数和随机字符串的库
 - True Random: 使用www.random.org生成随机数的库
@@ -514,9 +506,7 @@ socket_writev() 写数据到分散/聚合数组
 - SensioLabs Security Check: 一个根据安全建议检查Composer依赖的Web工具
 - Zed: 用于Web应用的集成渗透测试工具
 
-### 密码
-> 处理和存储密码的库和工具
-
+>## 0x28、密码
 - Password Compat: 一个用于新的PHP5.5密码功能的兼容库
 - phpass: 一个便携式密码哈希框架
 - PHP Password Lib: 一个用于生成和验证密码的库
@@ -524,9 +514,7 @@ socket_writev() 写数据到分散/聚合数组
 - Password Validator: 验证和升级密码哈希的库
 - Zxcvbn PHP: 一个基于Zxcvbn JS的PHP显示密码强度估计库
 
-### 代码分析
-> 用于分析、解析和操作代码库的工具
-
+>## 0x29、代码分析
 - PHP Parser: 一个PHP编写的PHP解析器
 - PHPPHP: 一个PHP实现的PHP虚拟机
 - PHPSandbox: PHP的沙盒环境
@@ -547,9 +535,7 @@ socket_writev() 写数据到分散/聚合数组
 - xHprof: 另一个PHP性能评测工具
 - PHPCheckstyle: 一个帮助遵守特定代码规则的工具
 
-### 调试
-> 调试代码的库和工具
-
+>## 0x30、调试
 - xDebug: 一个PHP的调试和分析工具
 - PHP Debug Bar: 一个调试工具条
 - PHP Console: Web调试控制台
@@ -557,55 +543,41 @@ socket_writev() 写数据到分散/聚合数组
 - PHPDBG: 一个交互性的PHP调试器
 - Tracy: 一个简单的错误检测、日志和时间测量库
 
-### 构建工具
-> 项目构建和自动化工具
-
+>## 0x31、构建工具
 - Go: 一个简单的PHP构建工具
 - Bob: 一个简单的项目自动化工具
 - Phake: 一个PHP克隆库
 - Box: 用来构建PHAR文件的工具
 - Phing: 依据Apache Ant的PHP项目构建系统
 
-### 任务运行器
-> 自动运行任务的库
-
+>## 0x32、任务运行器
 - Task: 依据Grunt和Gulp的纯PHP任务运行器
 - Robo: 面向对象的PHP任务运行器
 - Bldr: 构建在Symphony组件上的PHP任务运行器
 
-### 导航
-> 构建导航结构的工具
-
+>## 0x33、导航
 - KnpMenu: 一个菜单库
 - Cartographer: 一个站点地图生成库
 
-### 资源管理
-> 用于管理、压缩和最小化网站资源的工具
-
+>## 0x34、资源管理
 - Assetic: 一个资源管理的管道库
 - Pipe: 另一个资源管理的管道库
 - Munee: 一个资源优化库
 - JShrink: 一个JavaScript的最小化库
 - Puli: 一个检测资源绝对路径的库
 
-### 地理定位
-> 使用经纬度编码地址的库
-
+>## 0x35、地理定位
 - GeoCoder: 一个地理编码库
 - GeoTools: 一个地理工具相关的库
 - PHPGeo: 一个简单的地理库
 - GeoJSON: 一个GeoJSON的实现
 
-### 日期和时间
-> 处理日期和时间的库
-
+>## 0x36、日期和时间
 - Carbon: 一个简单的日期时间API扩展
 - ExpressiveDate: 另一个日期时间API扩展
 - CalendR: 一个日历管理的库
 
-### 事件
-> 事件驱动或非阻塞事件循环实现的库
-
+>## 0x37、事件
 - React: 一个事件驱动的非阻塞I/O库
 - Rx.PHP: 一个反应扩展库
 - Ratchet: 一个Web套接字库
@@ -614,15 +586,11 @@ socket_writev() 写数据到分散/聚合数组
 - Evenement: 一个事件调度库
 - FuelPHP Event: 另一个事件调度库
 
-### 日志
-> 用于生成和处理日志文件的库
-
+>## 0x38、日志
 - Monolog: 一个完整的日志工具
 - KLogger: 一个易于使用的PSR-3日志类
 
-### 电子商务
-> 用于支付和构建在线电子商务商店的库和应用
-
+>## 0x39、电子商务
 - OmniPay: 一个多网关支付处理的框架
 - Payum: 一个用于支付的抽象库
 - Sylius: 一个开源的电子商务解决方案
@@ -631,14 +599,11 @@ socket_writev() 写数据到分散/聚合数组
 - Sebastian Money: 一个处理货币价值的库
 - Swap: 一个汇率库
 
-### PDF
-> 处理PDF文件的库和软件
-- Snappy: 一个PDF和图像的生成库
+>## 0x40、PDF
+-Snappy: 一个PDF和图像的生成库
 - WKHTMLToPDF: 一个将HTML转换为PDF的工具
 
-### 数据库
-> 使用对象关系映射（ORM）或数据映射技术的数据库交互库
-
+>## 0x41、数据库
 - Doctrine: 一个完整的DBAL和ORM
 - Doctrine Extensions: 一个Doctrine行为的扩展集合
 - Propel: 一个快速的ORM，迁移和查询库
@@ -649,40 +614,30 @@ socket_writev() 写数据到分散/聚合数组
 - Pomm: 用于PostgreSQL的一个对象模型管理器
 - ProxyManager: 用于数据映射生成代理对象的工具集合
 
-### 迁移
-> 用于管理数据库模式和迁移的库
-
+>## 0x42、迁移
 - PHPMig: 一个迁移管理库
 - Phinx: 一个数据库迁移管理库
 - Migrations: 另一个迁移管理库
 - Doctrine Migrations: 用于Doctrine的迁移库
 
-### NoSQL
-> 处理NoSQL后端的库
-
+>## 0x43、NoSQL
 - MongoQB: 一个MongoDB的查询构建库
 - Monga: 一个MongoDB的抽象库
 - Predis: 一个功能完全的Redis库
 
-### 队列
-> 处理事件和任务队列的库
-
+>## 0x44、队列
 - Pheanstalk: 一个Beanstalkd客户端库
 - PHP AMQP: 一个纯PHP AMQP库
 - Thumper: 一个RabbitMQ模式库
 - Bernard: 一个多后端的抽象库
 
-### 搜索
-> 在数据中建立索引和执行查询相关的库和软件
-
+>## 0x45、搜索
 - ElasticSearch PHP: 用于ElasticSearch的官方客户端库
 - Elastica: 另一个ElasticSearch的客户端库
 - Solarium: Solr的客户端库
 - SphinxQL query builder: Sphinx搜索引擎的查询库
 
-### 命令行
-> 构建命令行工具的库
-
+>## 0x45、命令行
 - Boris: 一个微型的PHP REPL
 - PsySH: 另一个PHP REPL
 - Pecan: 一个事件驱动，非阻塞内核
@@ -696,9 +651,7 @@ socket_writev() 写数据到分散/聚合数组
 - Shunt: 一个在多台远程机器上并行运行的命令行库
 - Cilex: 构建命令行工具的小型框架
 
-### 身份验证
-> 实现身份验证模式的库
-
+>## 0x46、身份验证
 - Sentry: 一个身份验证和授权的框架
 - Sentry Social: 一个用于社交网络身份验证的库
 - Opauth: 一个多供应的身份验证框架
@@ -710,9 +663,7 @@ socket_writev() 写数据到分散/聚合数组
 - Hawk: 一个Hawk HTTP身份验证库
 - HybridAuth: 一个开源的社交登录库
 
-### 标记
-> 处理标记的库
-
+>## 0x47、标记
 - Decoda: 一个轻量级的标记解析库
 - PHP Markdown: Markdown解析器
 - CommonMark PHP: 一个支持CommonMark spec的Markdown解析器
@@ -722,9 +673,7 @@ socket_writev() 写数据到分散/聚合数组
 - Cebe Markdown: 一个快速、可扩展的Markdown解析器
 - HTML5 PHP: 一个HTML5解析和序列化的库
 
-### 字符串
-> 解析和操纵字符串的库
-
+>## 0x48、字符串
 - ANSI to HTML5: 一个将ANSI转换为HTML5的库
 - Patchwork UTF-8: 处理UTF-8格式字符串的便携库
 - Hoa String: 另一个UTF-8格式的字符串库
@@ -737,9 +686,7 @@ socket_writev() 写数据到分散/聚合数组
 - SQL Formatter: 一个用于格式化SQL语句的库
 - UA Parser: 一个用于解析用户字符串的库
 
-### 数字
-> 处理数字的库
-
+>## 0x49、数字
 - Numbers PHP: 一个处理数字的库
 - Math: 处理较大数字的库
 - ByteUnits: 一个在二进制和测量系统中解析、格式化和转换字节单位的库
@@ -747,7 +694,7 @@ socket_writev() 写数据到分散/聚合数组
 - PHP Conversion: 另一个测量单位间转换的库
 - LibPhoneNumber for PHP: PHP实现的Google电话号码处理系统库
 
-### 过滤和验证
+>## 0x50、过滤和验证
 > 用于过滤和验证数据的库
 
 - Filterus: 一个简单的PHP过滤库
@@ -758,9 +705,7 @@ socket_writev() 写数据到分散/聚合数组
 - MetaYaml: 支持YAML、JSON和XML的一个模式验证库
 - ISO-codes: 验证不同ISO和ZIP编码的库
 
-### REST和API
-> 用于开发REST-ful APIs的库和Web框架
-
+>## 0x51、REST和API
 - Apigility: 一个使用Zend Framework2构建的API构建器
 - Hateoas: 一个HATEOAS REST的web服务库
 - HAL: 一个超文本应用语言（HAL）构建库
@@ -768,16 +713,12 @@ socket_writev() 写数据到分散/聚合数组
 - Drest: 一个将Doctrine实体展现为REST资源结点的库
 - Restler: 一个将PHP方法展现为RESTful web API的轻量级框架
 
-### 缓存
-> 缓存数据的库
-
+>## 0x52、缓存
 - Alternative PHP Cache (APC): PHP的开源操作码缓存
 - Cache: 一个缓存库
 - Stash: 另一个缓存库
 
-### 数据结构和存储
-> 实现数据结构和存储技术的库
-
+>## 0x53、数据结构和存储
 - Ardent: 一个数据结构库
 - PHP Collections: 一个简单的集合库
 - Serializer: 用于序列化和反序列化数据的库
@@ -787,25 +728,19 @@ socket_writev() 写数据到分散/聚合数组
 - PINQ: PHP实时Linq库
 - JsonMapper: 一个将内嵌JSON结构映射到PHP类上的库
 
-### 通知
-> 关于通知软件的库
-
+>## 0x54、通知
 - Nod: 一个通知库
 - Notificato: 一个处理推送消息的库
 - Notification Pusher: 设备推送通知的独立库
 - Notificator: 一个轻量级通知库
 
-### 部署
-> 用于项目部署的库
-
+>## 0x55、部署
 - Pomander: 一个PHP应用的部署工具
 - Rocketeer: PHP的快速和简单部署器
 - Envoy: 使用PHP运行SSH任务的工具
 - Plum: 一个部署库
 
-### 第三方API
-> 访问第三方API的库
-
+>## 0x56、第三方API
 - Amazon Web Service SDK: PHP AWS SDK官方库
 - S3 Stream Wrapper: Amazon S3的流包装库
 - Stripe: 官方的Stripe PHP库
@@ -819,13 +754,11 @@ socket_writev() 写数据到分散/聚合数组
 - Twilio: 官方的Twilio PHP REST API
 - Mailgun: 官方的Mailgun PHP API
 
-### 扩展
-> 帮助构建PHP扩展的库
-
+>## 0x57、扩展
 - Zephir: 用于开发PHP扩展的一种在PHP和C++间的编译语言
 - PHP CPP: 一个用于开发PHP扩展的C++库
 
-### PHP安装
+>## 0x58、PHP安装
 - HomeBrew: OSX的包管理器
 - HomeBrew PHP:一个HomeBrew的PHP接头
 - PHP OSX: 用于OSX的PHP安装器
@@ -835,7 +768,7 @@ socket_writev() 写数据到分散/聚合数组
 - PHP Build: 一个PHP的版本安装器
 - VirtPHP: 一个用来创建和管理独立PHP开发环境的工具
 
-### 开发环境
+>## 0x59、开发环境
 - Vagrant: 一个便携式的开发环境工具
 - Ansible: 一个非常简单的编制框架
 - Puppet: 一个服务器自动化框架和应用
@@ -843,20 +776,16 @@ socket_writev() 写数据到分散/聚合数组
 - Protobox: 另一个用于构建PHP开发虚拟机的Web工具
 - Phansible: 一个用Ansible构建PHP开发开发虚拟机的Web工具
 
-### 集成开发环境IDE
-> 支持PHP的集成开发环境
-
+>## 0x60、集成开发环境IDE
 - Netbeans: 支持PHP和HTML5的IDE环境
 - Eclipse for PHP Developers : 基于Eclipse平台的PHP IDE
 - PhpStorm : 商业PHP IDE
 
-### Web应用
-> 基于Web的应用和工具
-
+>## 0x61、Web应用
 - 3V4L: 一个在线的PHP内核
 - DBV: 一个数据库版本控制应用
 - PHP Queue: 一个管理队列后端的应用
 - Composer as a Service: 作为一个zip文件下载Composer包的工具
 - MailCatcher: 一个抓取和浏览邮件的Web工具
 
-# 源码解析
+>## 0x62、源码解析

@@ -1,15 +1,9 @@
-php---
-author: "hackfox"
-date: 2015-07-05 08:32:19
-title: "PHP字符串操作"
-categories:
-  - Development
-tags:
-  - PHP
-comments: false
-toc: true
-draft: false
----
+# PHP字符串操作
+
+- 作者：codehackfox@gmail.com
+- 时间：2015-06-12 13:24:35
+
+> ## 0x00、字符串操作
 
 - 1.print 有返回值、只能输出一个、可以用在表达式中
  * echo 无返回值、能输出多个、不能用于表达式中

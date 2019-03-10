@@ -1,52 +1,43 @@
----
-author: "hackfox"
-date: 2015-10-12 12:23:00
-title: "mysql技术"
-categories:
-  - 计算机
-  - mysql
-tags:
-  - mysql
-comments: false
-toc: true
-draft: false
----
+# mysql技术
 
->数据库基本概念
-1.数据模型：描述数据、数据关系、数据语义及一致性约束的概念工具集
-    1）网络模型
-    2）层次模型
-    3）关系模型*
-2.关系模型：用表来描述数据与数据间的关系
-3.数据完整性和数据保护
-4.mysql 1.0诞生于1995年
-5.mysql以守护进程运行
+- 作者：codehackfox@gmail.com
+- 时间：2015-10-12 12:23:00
 
+> ## 0x00、数据库基本概念
 
+- 1.数据模型：描述数据、数据关系、数据语义及一致性约束的概念工具集
+    - 1）网络模型
+    - 2）层次模型
+    - 3）关系模型*
+- 2.关系模型：用表来描述数据与数据间的关系
+- 3.数据完整性和数据保护
+- 4.mysql 1.0诞生于1995年
+- 5.mysql以守护进程运行
 
->结构体系
-1.连接器
+> ## 0x01、结构体系
+
+- 1.连接器
     mysql> show variables like "%connection%";
     进行身份验证、线程重用,连接限制,检查内存,数据缓存；管理用户的连接，线程处理等需要缓存的需求。
-2.连接池组件
-3.缓存
+- 2.连接池组件
+- 3.缓存
     全局和引擎特定的缓存和缓冲区
     mysql> show variables like '%query_cache%';
-4.权限
-5.表管理器
-6.日志管理
-7.sql接口组件
+- 4.权限
+- 5.表管理器
+- 6.日志管理
+- 7.sql接口组件
     进行DML、DDL,存储过程、视图、触发器等操作和管理；用户通过SQL命令来查询所需结果。
-8.插件式存储引擎
+- 8.插件式存储引擎
     mysql> show engines;
-9.解析器
+- 9.解析器
     查询翻译对象的特权；SQL命令传递到解析器的时候会被解析器验证和解析
-10.优化器
+- 10.优化器
     访问路径的统计数据
     mysql> select @@optimizer_switch;
-11.管理服务与工具组件
+- 11.管理服务与工具组件
     备份和恢复的安全性，复制，集群，管理，配置，迁移和元数据
-12.物理文件
+- 12.物理文件
     #1.日志文件
         1)错误日志：errorlog
         2)二进制日志：binlog
@@ -70,7 +61,8 @@ draft: false
 
 
 
->系统架构
+> ## 0x02、系统架构
+
 1.逻辑模块
     #1.SQL Layer:权限判断、sql解析、执行计划优化、query cache的处理
         1)初始化模块：在mysql server启动时，对整个系统做各种各样的优化，如：各种buffer、cache结构的初始化和内存空间申请，各种系统变量初始化，各种存储引擎初始化等
@@ -117,17 +109,17 @@ draft: false
             *Storage层的NDB数据节点，也就是上面说的NDB Cluster
 
 
->安全
-1.网络
-2.主机
-3.数据库
-4.代码
-5.权限
-    #1.有关权限信息主要存储在几个被称为 grant tables 的系统表中，即： mysql.User， mysql.db， mysql.Host， mysql.table_priv和mysql.column_priv
-    #2.由于权限信息数据量比较小，而且访问又非常频繁，所以Mysql在启动的时候，就会将所有的权限信息都Load到内存中保存在几个特定的结构中。
-    #3.议读者一般情况下尽量使用GRANT， REVOKE， CREATE USER以及DROP USER命令来进行用户和权限的变更操作， 尽量减少直接修改grant tables来实现用户和权限变更的操作
-    #4.查询权限：SHOW GRANTS FOR 'username'@'hostname'
-    #5.权限级别：分为五个级别
+>## 0x03、安全
+- 1.网络
+- 2.主机
+- 3.数据库
+- 4.代码
+- 5.权限
+    * 1.有关权限信息主要存储在几个被称为 grant tables 的系统表中，即： mysql.User， mysql.db， mysql.Host， mysql.table_priv和mysql.column_priv
+    * 2.由于权限信息数据量比较小，而且访问又非常频繁，所以Mysql在启动的时候，就会将所有的权限信息都Load到内存中保存在几个特定的结构中。
+    * 3.议读者一般情况下尽量使用GRANT， REVOKE， CREATE USER以及DROP USER命令来进行用户和权限的变更操作， 尽量减少直接修改grant tables来实现用户和权限变更的操作
+    * 4.查询权限：SHOW GRANTS FOR 'username'@'hostname'
+    * 5.权限级别：分为五个级别
         1)Global Level:称为全局权限控制， 所有权限信息都保存在mysql.user表中。 Global Level的所有权限都是针对整个mysqld的，对所有的数据库下的所有表及所有
                 字段都有效。如果一个权限是以Global Level来授予的，则会覆盖其他所有级别的相同权限设置。
                 只需要在执行GRANT命令的时候，用“ *.*”来指定适用范围是Global的即可，当有多个权限需要授予的时候，也并不需要多次重复执行GRANT命令，只需要一次将所有需要的权限名称通过逗号（ “ ,”）分隔开即可，
@@ -198,7 +190,7 @@ draft: false
 
 
 
->存储管理器
+> ## 0x04、存储管理器
 1.权限及完整性管理器
 2.事务管理器
     1)原子性
@@ -212,23 +204,25 @@ draft: false
 7.索引
 
 
->查询处理器
-1.DDL解释器
-2.DML编译器
-3.查询计算引擎
-4.预处理
+> ## 0x05、查询处理器
+
+- 1.DDL解释器
+- 2.DML编译器
+- 3.查询计算引擎
+- 4.预处理
 
 
->关系型数据库
-1.数据库
-2.表、元组、类型、主键、外键、码、关系、属性
-3.范式
-4.数据抽象：物理层、逻辑层、视图层
-5.关系运算：选择、投影、并、差、笛卡儿积、交、自然连接、除
-6.外连接：左外连接、右外连接
+> ## 0x06、关系型数据库
+
+- 1.数据库
+- 2.表、元组、类型、主键、外键、码、关系、属性
+- 3.范式
+- 4.数据抽象：物理层、逻辑层、视图层
+- 5.关系运算：选择、投影、并、差、笛卡儿积、交、自然连接、除
+- 6.外连接：左外连接、右外连接
 
 
->关键字(SQL)
+> ## 0x07、关键字(SQL)
 create,delete,drop,select,insert,update,set
 database,table,index,function,process,trigger
 show,status,processlist
@@ -239,7 +233,7 @@ primary key,foreign key,not null,default,auto increment
 grant,revoke
 
 
->SQL语句
+> ## 0x08、SQL语句
 1.DDL和DML
 2.创建操作
 3.权限操作
@@ -278,7 +272,7 @@ grant,revoke
 
 
 
->内置函数(聚集函数)：不能组合使用
+> ## 0x09、内置函数(聚集函数)：不能组合使用
 max(),min(),count(),avg(),sum()
 now(),curdate(),datetime(),timestamp(),curtime(),year()
 concat(),
@@ -286,34 +280,38 @@ concat(),
 
 
 
->基本类型
-1.int(-2,147,483,648--2,147,483,647,4字节),samllint(-32,768--32,767,2字节),tinyint(-128--127,1字节),unsigned,bigint(-9223372036854775808--9223372036854775807,8字节)
-2.char,varchar
-3.data,time,timestamp
-4.double,float,numberic
-5.tiny text,text,medium text,long text
-6.blob,medium blob,long blob
-7.enum,set
+> ## 0x10、基本类型
+
+- 1.int(-2,147,483,648--2,147,483,647,4字节),samllint(-32,768--32,767,2字节),tinyint(-128--127,1字节),unsigned,bigint(-9223372036854775808--9223372036854775807,8字节)
+- 2.char,varchar
+- 3.data,time,timestamp
+- 4.double,float,numberic
+- 5.tiny text,text,medium text,long text
+- 6.blob,medium blob,long blob
+- 7.enum,set
 
 
->匹配
-%：匹配任意
-_：匹配任意一个字符
+> ## 0x11、匹配
+
+- %：匹配任意
+- _：匹配任意一个字符
 
 
->存储过程
+> ## 0x12、存储过程
 
 
->索引
-1.最适合索引的是在where之后的
-2.使用唯一索引
-3.使用短索引
-4.利用最左前缀
-5.不要过度索引
+> ## 0x13、索引
+
+- 1.最适合索引的是在where之后的
+- 2.使用唯一索引
+- 3.使用短索引
+- 4.利用最左前缀
+- 5.不要过度索引
 
 
 
->数据库设计问题
+> ## 0x14、数据库设计问题
+
 1.数据冗余与不一致
 2.数据访问困难
 3.数据孤立
@@ -336,21 +334,24 @@ _：匹配任意一个字符
 
 
 
->数据库设计步骤
-1.刻画未来数据库用户的需求：需求规格说明书
-2.概念设计阶段：实体-联系模型图(确保数据需求都被满足，并且不互相冲突),重点是如何描述数据及其相互关系
-3.功能需求规则说明书：确保设计模式满足功能需求
-4.逻辑设计阶段
-5.物理设计阶段
+> ## 0x15、数据库设计步骤
+
+- 1.刻画未来数据库用户的需求：需求规格说明书
+- 2.概念设计阶段：实体-联系模型图(确保数据需求都被满足，并且不互相冲突),重点是如何描述数据及其相互关系
+- 3.功能需求规则说明书：确保设计模式满足功能需求
+- 4.逻辑设计阶段
+- 5.物理设计阶段
 
 
->mysql存储引擎
+> ## 0x16、mysql存储引擎
+
 1.Innodb:事务安全
 2.Myisam：非事务安全
 
 
 
->事务/锁
+> ## 0x17、事务/锁
+
 1.在同一个事务中，最好不使用不同存储引擎的表
 2.DDL语句不能回滚
 3.锁定机制直接影响数据库的并发处理能力和性能
@@ -369,7 +370,8 @@ _：匹配任意一个字符
 
 
 
->备份/复制
+> ## 0x18、备份/复制
+
 1.逻辑备份
     #1.用mysqldump导出sql文件
     #2.生成特定分割文件
@@ -380,7 +382,7 @@ _：匹配任意一个字符
 
 
 
->优化建议
+> ## 0x19、优化建议
 1.如果opened_tables太大,应该把my.cnf中的table_cache变大
 2.如果Key_reads太大,则应该把my.cnf中key_buffer_size变大.可以用Key_reads/Key_read_requests计算出cache失败率
 3.如果Handler_read_rnd太大,则你写的SQL语句里很多查询都是要扫描整个表,而没有发挥索引的键的作用
@@ -388,7 +390,7 @@ _：匹配任意一个字符
 5.如果Created_tmp_disk_tables太大,就要增加my.cnf中tmp_table_size的值,用基于内存的临时表代替基于磁盘的
 
 
->information_schema表
+> ## 0x20、information_schema表
 CHARACTER_SETS — 关于字符集信息
 COLLATIONS — 关于每个字符集的（排序）规则信息
 COLLATION_CHARACTER_SET_APPLICABILITY — 关于字符集和每种（排序）规则的对应关系信息
@@ -424,7 +426,7 @@ INNODB_XXXX表 — 这些表被用于监控正在进行的InnoDB活动，可以�
 
 
 
->配置参数:show variables;
+> ## 0x21、配置参数:show variables;
 auto_increment_increment:自增长键的步长
 auto_increment_offset:自增长键的起始值
 autocommit:
@@ -880,7 +882,7 @@ warning_count, 1
 
 
 
->性能指标:show status;
+> ## 0x22、性能指标:show status;
   Aborted_clients：由于客户端没有正确关闭连接导致客户端终止而中断的连接数。global
   Aborted_connects:试图连接到MySQL服务器而失败的连接数。global
   Binlog_cache_disk_use:使用临时二进制日志缓存但超过binlog_cache_size值并使用临时文件来保存事务中的语句的事务数量.global
