@@ -1,11 +1,10 @@
+# VIM使用文档总结
 
-## VIM使用文档总结
-```
-@author:codehackfox@gmail.com
-@date: 2017-03
-```
+- 作者:codehackfox@gmail.com
+- 时间: 2017-03-02 13:10:12
 
-### 快捷键
+
+>## 0x00、快捷键
 - 向下添加一行
   >  o
 - 向下翻页

@@ -1,19 +1,11 @@
----
-author: "hackfox"
-date: 2016-12-24 19:08:57
-title: "Git常用命令"
-categories:
-  - Development
-tags:
-  - git
-comments: false
-toc: true
-draft: false
----
+# Git常用命令
+- 作者：codehackfox@gmail.com
+- 时间：2016-12-24 19:08:57
 
-- ``git init``                  #git 初始化仓库
+>## 0x00、常用命令
+- ``git init``  #git 初始化仓库
 - ``git clone remote_url``      #git 克隆远程库
-- ``git add *`` #git 添加所有文件
+- ``git add .`` #git 添加所有文件
 - ``git commit -m "批注"``      #git 提交
 - ``git push <remoteName> <localName>``                 #git推送至远程
 - ``git remote add origin <server>``    #远程没有创建仓库，将本地推送到远程仓库

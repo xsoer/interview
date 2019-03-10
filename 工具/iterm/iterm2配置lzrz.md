@@ -1,7 +1,7 @@
 # iterm2配置lzrz
 
-- 时间：2019-03-09 12:11:30
 - 作者：codehackfox@gmail.com
+- 时间：2019-03-09 12:11:30
 
 
 >## 0x00、安装lzrz
@@ -26,7 +26,7 @@ sudo wget https://raw.github.com/mmastrac/iterm2-zmodem/master/iterm2-recv-zmode
 sudo chmod 777 /usr/local/bin/iterm2-*
 ```
 
->## 0x02 配置iterm2
+>## 0x02、配置iterm2
 
 - 1.打开Item2，点击preferences → profiles，选择某个profile，如Default，之后继续选择advanced → triggers，添加编辑添加如下triggers：
 (Profiles -> Open Profiles -> Edit Profies -> Advanced -> Triggers -> Edit )
@@ -44,4 +44,4 @@ Action: Run Silent Coprocess
 Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
 ```
 
->## 0x03 配置完毕，进行尝试。
+>## 0x03、配置完毕，进行尝试。
