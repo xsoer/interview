@@ -73,6 +73,8 @@
 - matplotlib
     - [官网](https://matplotlib.org/)
     - [文档地址](https://matplotlib.org/contents.html)
+    - [文档pdf版本](https://matplotlib.org/Matplotlib.pdf)
+    - [中文文档](https://www.matplotlib.org.cn/index.html)
     - [总结说明](https://github.com/xsoer/interview/blob/master/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/python/libaray/matplotlib.md)
 
 
