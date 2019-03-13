@@ -20,3 +20,6 @@ plot.close()
 - savefig
 - close
 
+- matplotlib使用numpy进行数组运算，并调用一系列其他的Python库来实现硬件交互。matplotlib的核心是一套由对象构成的绘图API。
+- Python中的函数式编程是通过封装对象实现的
+
